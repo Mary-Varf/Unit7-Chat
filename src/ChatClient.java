@@ -39,8 +39,11 @@ public class ChatClient {
                 out.println(input);
             }
         }
+        catch (ConnectException e) {
+            System.out.println("Error: Could not connect to the server. Make sure the server is running and try again.");
+        }
         catch (IOException e) {
-            System.out.println("Could not connect to server. Make sure the server is running.");
+            System.out.println("An error occurred while connecting to the server.");
         }
     }
 }
